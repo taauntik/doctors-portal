@@ -33,7 +33,7 @@ const data = [
 function BusinessInfo() {
   return (
     <section className="d-flex justify-content-center">
-      <div className="row">
+      <div style={{ width: "880px" }} className="row">
         {data.map((info) => (
           <InfoCard key={info.id} info={info} />
         ))}
