@@ -34,7 +34,7 @@ function Services() {
       <div className="d-flex justify-content-center">
         <div style={{ width: "80%" }} className="row my-5">
           {servicesData.map((service) => (
-            <ServiceDetail service={service} />
+            <ServiceDetail key={service.id} service={service} />
           ))}
         </div>
       </div>
