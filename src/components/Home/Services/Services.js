@@ -26,7 +26,7 @@ const servicesData = [
 
 function Services() {
   return (
-    <section>
+    <section className="container">
       <div className="text-center m-5">
         <h5 className="primary-text mb-4">OUR SERVICES</h5>
         <h2 className="text-brand h1">Services We Provide</h2>

@@ -5,7 +5,7 @@ import featured from "../../../images/featured.png";
 
 function Featured() {
   return (
-    <section className="container-fluid my-5 d-flex justify-content-center">
+    <section className="container my-5 d-flex justify-content-center">
       <div style={{ width: "95%" }} className="row">
         <div className="col-md-6">
           <img

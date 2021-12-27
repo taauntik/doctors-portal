@@ -5,7 +5,7 @@ import Chair from "../../../images/chair.png";
 
 function HeaderMain() {
   return (
-    <main style={{ height: "80%" }}>
+    <main style={{ height: "80%" }} className="container">
       <div style={{ height: "100%"}} className="row d-flex align-items-center">
         <div className="col-md-4 offset-md-1">
           <h1 className="text-brand">
