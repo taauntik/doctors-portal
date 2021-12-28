@@ -20,3 +20,7 @@
 button.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day.calendar-item {
   background-image: linear-gradient(to right, #18d2b2, #0fcfea);
 }
+
+button.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day.calendar-item {
+  background-image: linear-gradient(to right, #18d2b2, #0fcfea);
+}

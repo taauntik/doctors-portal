@@ -11,7 +11,7 @@ import "../../../styles/common/Footer/Footer.css";
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className="footer border-top">
       <div className="container">
         <div className="row">
           <div className="col-md-3 footer-col">

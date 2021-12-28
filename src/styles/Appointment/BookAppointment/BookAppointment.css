@@ -1,0 +1,11 @@
+.book-appointment {
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.booking-card {
+  box-shadow: 0 0 35px -2px rgb(72 73 121 / 15%);
+  margin-top: 20px;
+  padding: 40px;
+  border-radius: 5px;
+}
