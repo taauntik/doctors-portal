@@ -1,0 +1,26 @@
+.float-btn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #1cc7c1;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.float-btn:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.float-icon {
+  font-size: 30px;
+  transition: 0.3s;
+}
