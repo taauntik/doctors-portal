@@ -13,21 +13,21 @@ const testimonialData = [
     id: 1,
     name: "Winson Herry",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam maiores necessitatibus ipsam totam quisquam? Maiores delectus unde explicabo laudantium voluptate.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam maiores necessitatibus ipsam totam quisquam? laudantium voluptate.",
     avatar: WinsonHerry,
   },
   {
     id: 1,
     name: "Ariana Grande",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam maiores necessitatibus ipsam totam quisquam? Maiores delectus unde explicabo laudantium voluptate.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam maiores necessitatibus ipsam totam quisquam? laudantium voluptate.",
     avatar: ArianGrande,
   },
   {
     id: 1,
     name: "Ms. Hend",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam maiores necessitatibus ipsam totam quisquam? Maiores delectus unde explicabo laudantium voluptate.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam maiores necessitatibus ipsam totam quisquam? laudantium voluptate.",
     avatar: MsHend,
   },
 ];
