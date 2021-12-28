@@ -1,7 +1,7 @@
 import React from "react";
 
 // internal imports
-import Navbar from "./Navbar";
+import Navbar from "../../common/Navbar/Navbar";
 import HeaderMain from "./HeaderMain";
 import "../../../styles/Home/Header/Header.css";
 import BusinessInfo from "./BusinessInfo/BusinessInfo";

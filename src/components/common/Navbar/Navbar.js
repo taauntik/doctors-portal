@@ -22,17 +22,17 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item ms-5">
-              <a className="nav-link text-white" href="#">
+              <a className="nav-link" href="#">
                 Reviews
               </a>
             </li>
             <li className="nav-item ms-5">
-              <a className="nav-link text-white" aria-current="page" href="#">
+              <a className="nav-link" aria-current="page" href="#">
                 Blog
               </a>
             </li>
             <li className="nav-item ms-5">
-              <a className="nav-link text-white" href="#">
+              <a className="nav-link" href="#">
                 Contact Us
               </a>
             </li>

@@ -2,6 +2,7 @@ import React from "react";
 
 // internal imports
 import Chair from "../../../images/chair.png";
+import "../../../styles/Home/Header/Header.css";
 
 function HeaderMain() {
   return (
@@ -11,10 +12,6 @@ function HeaderMain() {
           <h1 className="text-brand">
             Your New Smile <br /> Starts Here
           </h1>
-          <p className="text-secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-            asperiores aspernatur tempore accusamus.
-          </p>
           <button className="primary-btn">GET APPOINTMENT</button>
         </div>
         <div className="col-md-6">

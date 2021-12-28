@@ -13,6 +13,7 @@ import Footer from "../../components/common/Footer/Footer";
 import "../../styles/Home/Home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import FloatBtn from "../../components/common/FloatBtn/FloatBtn";
 
 function Home() {
   const [showFloatBtn, setShowFloatBtn] = useState(false);
@@ -34,13 +35,7 @@ function Home() {
       <Doctors />
       <Contact />
       <Footer />
-      {showFloatBtn ? (
-        <div className="float-btn" onClick={() => window.scroll(0, 0)}>
-          <FontAwesomeIcon className="float-icon" icon={faArrowUp} />
-        </div>
-      ) : (
-        <div></div>
-      )}
+      {showFloatBtn ? <FloatBtn /> : <div></div>}
     </>
   );
 }
