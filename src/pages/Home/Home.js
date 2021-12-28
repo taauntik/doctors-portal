@@ -7,6 +7,7 @@ import Testimonial from "../../components/Home/Testimonial/Testimonial";
 import Appointment from "../../components/Home/Appointment/Appointment";
 import Featured from "../../components/Home/Featured/Featured";
 import Blogs from "../../components/Home/Blogs/Blogs";
+import Doctors from "../../components/Home/Doctors/Doctors";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <Appointment />
       <Testimonial />
       <Blogs />
+      <Doctors />
     </>
   );
 }
