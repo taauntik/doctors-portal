@@ -1,0 +1,13 @@
+.logingbg {
+  background: url("../../images/Loginbg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-form {
+  height: 100%;
+}
+
+.login {
+  height: 100%;
+}
