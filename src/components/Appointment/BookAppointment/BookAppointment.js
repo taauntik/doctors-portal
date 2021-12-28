@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // internal imports
 import "../../../styles/Appointment/BookAppointment/BookAppointment.css";
 import BookingCard from "./BookingCard";
+import Modal from "../../custom/Modal/Modal";
 
 // dummy data
 const bookings = [
@@ -51,15 +52,55 @@ const bookings = [
 ];
 
 function BookAppointment({ date }) {
+  const [modal, setModal] = useState(false);
+  const [modalTitle, setModalTitle] = useState("");
+
+  const modalRef = React.useRef();
+
+  function closeModal() {
+      setModal(false);
+  }
+
+  function hideModal(event) {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+    } else if (event.keyCode === 27) {
+        closeModal();
+    }
+  }
+
+  function showModal(show, bookingName) {
+    setModal(show);
+    setModalTitle(bookingName);
+  }
+
+  useEffect(() => {
+    window.addEventListener("mousedown", hideModal);
+    window.addEventListener("keydown", hideModal);
+  }, [modalRef]);
   return (
     <div className="book-appointment container">
       <h2 className="primary-text text-center">
         Available Appointments on {date.toDateString()}
       </h2>
 
+      <Modal
+        ref={modalRef}
+        appointmentOn={modalTitle}
+        className={`${modal && "d-block"}`}
+        date={date}
+        closeModal={closeModal}
+      />
+
       <div className="row mt-3 container">
         {bookings.map((booking) => (
-          <BookingCard key={booking.id} date={date} booking={booking} />
+          <BookingCard
+            key={booking.id}
+            showModal={showModal}
+            modal={modal}
+            date={date}
+            booking={booking}
+          />
         ))}
       </div>
     </div>
