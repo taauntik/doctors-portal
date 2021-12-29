@@ -14,7 +14,11 @@ function Modal({ className, appointmentOn, date, closeModal }, ref) {
             On {date.toDateString()}
           </small>
         </div>
-        <AppointmentForm closeModal={closeModal} />
+        <AppointmentForm
+          closeModal={closeModal}
+          appointmentOn={appointmentOn}
+          date={date}
+        />
       </section>
     </div>
   );

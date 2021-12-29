@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-function AppointmentForm({ closeModal }) {
+function AppointmentForm({ closeModal, appointmentOn, date }) {
   const {
     register,
     handleSubmit,
@@ -9,8 +9,23 @@ function AppointmentForm({ closeModal }) {
   } = useForm();
 
   function onSubmit(data) {
-      console.log(data);
-      closeModal();
+    data.service = appointmentOn;
+    data.date = date;
+    data.createdAt = new Date();
+    console.log(data);
+    fetch("http://localhost:5000/appointment", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        closeModal();
+        alert("Thanks for creating an appointment!");
+      })
+      .catch((err) => console.log(err));
   }
 
   return (

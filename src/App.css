@@ -10,6 +10,17 @@
   outline: none;
 }
 
+.admin-calendar {
+  border: none;
+  box-shadow: 0 0 35px -2px rgb(72 73 121 / 15%);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.react-calendar.admin-calendar {
+  border: none;
+}
+
 .primary-btn:hover {
   background-image: linear-gradient(to left, #18d2b2, #0fcfea);
 }
@@ -19,5 +30,5 @@
 }
 
 .primary-text {
-  color: #1CC7C1;
+  color: #1cc7c1;
 }
