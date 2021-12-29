@@ -6,12 +6,14 @@ function AppointmentForm({ closeModal, appointmentOn, date }) {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
+    resetField,
   } = useForm();
 
-  function onSubmit(data) {
+  function onSubmit(data, e) {
     data.service = appointmentOn;
-    data.date = date;
-    data.createdAt = new Date();
+    data.date = date.toLocaleDateString();
+    data.createdAt = new Date().toLocaleDateString();
     console.log(data);
     fetch("http://localhost:5000/appointment", {
       method: "POST",
@@ -24,6 +26,8 @@ function AppointmentForm({ closeModal, appointmentOn, date }) {
       .then((result) => {
         closeModal();
         alert("Thanks for creating an appointment!");
+        reset();
+        resetField();
       })
       .catch((err) => console.log(err));
   }

@@ -1,0 +1,28 @@
+.table-container {
+  background-color: #ffffff;
+  box-shadow: 0 0 35px -2px rgb(72 73 121 / 15%);
+  border-radius: 4px;
+  border: none;
+}
+
+.option {
+  color: black;
+  padding: 10px;
+}
+
+.table-container h5 {
+    font-weight: bold;
+}
+
+.mytable {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.mytable__head .mytable__col {
+  color: #8b8888;
+}
+
+.mytable__col {
+  padding: 10px 20px;
+}
