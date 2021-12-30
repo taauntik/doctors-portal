@@ -73,7 +73,7 @@ function AppointmentForm({ closeModal, appointmentOn, date }) {
 
         <div className="d-flex justify-content-between">
           <div className="form-group me-2">
-            <select style={{ width: "100px" }} className="form-control">
+            <select {...register("gender")} style={{ width: "100px" }} className="form-control">
               <option>Male</option>
               <option>Female</option>
               <option>Other</option>

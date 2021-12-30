@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { ToastContainer, toast, cssTransition } from "react-toastify";
-import "animate.css/animate.min.css";
-import "react-toastify/dist/ReactToastify.css";
+import { toast, cssTransition } from "react-toastify";
 
 const bounce = cssTransition({
   enter: "animate__animated animate__bounceIn",
@@ -48,19 +46,6 @@ function SelectIsVisited({ id, visited }) {
           visited
         </option>
       </select>
-      <ToastContainer
-        id="animate.css"
-        transition={bounce}
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover={false}
-      />
     </div>
   );
 }

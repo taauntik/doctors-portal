@@ -32,3 +32,8 @@
 .primary-text {
   color: #1cc7c1;
 }
+
+.link-style-none {
+  text-decoration: none;
+  color: #000000DE;
+}

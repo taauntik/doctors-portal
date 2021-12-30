@@ -1,13 +1,26 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { ToastContainer } from "react-toastify";
+import "animate.css/animate.min.css";
+import "react-toastify/dist/ReactToastify.css";
 
 // internal imports
 import SelectIsVisited from "../SelectIsVisited/SelectIsVisited";
-
 function AppointmentsByDate({ appointments, date }) {
-  useEffect(() => {}, [appointments]);
 
   return (
-    <div className="border container p-3 table-container">
+    <div className="border container p-3 table-container overflow-hidden">
+      <ToastContainer
+        id="animate.css"
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+      />
       <div className="d-flex justify-content-between">
         <p
           style={{ fontSize: "16px", fontWeight: "bold" }}
@@ -20,7 +33,7 @@ function AppointmentsByDate({ appointments, date }) {
       <br />
       <br />
       {appointments.length > 0 ? (
-        <table className="mytable">
+        <table style={{ maxWidth: "100%" }} className="mytable">
           <thead className="mytable__head">
             <tr className="mytable__cols">
               <th className="mytable__col">Name</th>
