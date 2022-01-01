@@ -21,6 +21,7 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import PeopleIcon from "@mui/icons-material/People";
 import DescriptionIcon from "@mui/icons-material/Description";
 import SettingsIcon from "@mui/icons-material/Settings";
+import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 
 const drawerWidth = 240;
 
@@ -153,7 +154,7 @@ export default function Sidebar({ title, children }) {
         </div>
         <Divider />
         <List>
-          <Link className="link-style-none" to="/dashboard/">
+          <Link className="link-style-none" to="/dashboard">
             <ListItem button>
               <ListItemIcon>
                 <DashboardIcon />
@@ -175,6 +176,15 @@ export default function Sidebar({ title, children }) {
                 <PeopleIcon />
               </ListItemIcon>
               <ListItemText primary="Patients" />
+            </ListItem>
+          </Link>
+
+          <Link className="link-style-none" to="/dashboard/adduser">
+            <ListItem button>
+              <ListItemIcon>
+                <PersonAddAltIcon />
+              </ListItemIcon>
+              <ListItemText primary="Add People" />
             </ListItem>
           </Link>
           <ListItem button>

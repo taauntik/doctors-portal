@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
+import { Outlet } from "react-router-dom";
 
 // internal imports
 import Sidebar from "../../../components/Dashboard/Sidebar/Sidebar";

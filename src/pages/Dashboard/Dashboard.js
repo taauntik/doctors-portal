@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 import { AppContext } from "../../App";
 import DashbaordAppointmentTable from "../../components/Dashboard/DashboardAppointmentTable/DashbaordAppointmentTable";
 

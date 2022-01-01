@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import PatientsDataTable from "../../../components/Dashboard/PatientsDataTable/PatientsDataTable";
+import { Outlet } from "react-router-dom";
 
 // internal imports
 import Sidebar from "../../../components/Dashboard/Sidebar/Sidebar";
+import PatientsDataTable from "../../../components/Dashboard/PatientsDataTable/PatientsDataTable";
 
 function AllPatients() {
   const [patients, setPatients] = useState([]);

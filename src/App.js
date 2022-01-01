@@ -1,9 +1,14 @@
 import { createContext, useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 // internal imports
 import "./App.css";
 import Appointment from "./pages/Appointment/Appointment";
+import AddUser from "./pages/Dashboard/AddUser/AddUser";
 import AllPatients from "./pages/Dashboard/AllPatients/AllPatients";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import DashboardAppointment from "./pages/Dashboard/DashboardAppointment/DashboardAppointment";
@@ -35,6 +40,7 @@ function App() {
             element={<DashboardAppointment />}
           />
           <Route path="/dashboard/allpatients" element={<AllPatients />} />
+          <Route path="/dashboard/adduser" element={<AddUser />} />
         </Routes>
       </Router>
     </AppContext.Provider>
