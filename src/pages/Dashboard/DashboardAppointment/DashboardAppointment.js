@@ -25,23 +25,24 @@ function DashboardAppointment() {
 
   return (
     <div>
-      <Sidebar title="Appointments">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-5">
-              <Calendar
-                className="admin-calendar"
-                tileClassName="calendar-item"
-                onChange={handleDateChange}
-                value={selectedDate}
-              />
-            </div>
-            <div className="col-md-7">
-              <AppointmentsByDate date={selectedDate} appointments={appointments} />
-            </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-5">
+            <Calendar
+              className="admin-calendar"
+              tileClassName="calendar-item"
+              onChange={handleDateChange}
+              value={selectedDate}
+            />
+          </div>
+          <div className="col-md-7">
+            <AppointmentsByDate
+              date={selectedDate}
+              appointments={appointments}
+            />
           </div>
         </div>
-      </Sidebar>
+      </div>
     </div>
   );
 }

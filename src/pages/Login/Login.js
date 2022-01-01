@@ -13,7 +13,21 @@ function Login() {
   } = useForm();
 
   function onSubmit(data) {
-    console.log(data);
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((info) => {
+        if (info.error) {
+        } else {
+          localStorage.setItem("token", info.token);
+        }
+      })
+      .catch((err) => console.log(err));
   }
   return (
     <div className="container">
@@ -30,21 +44,21 @@ function Login() {
                 type="text"
                 className="form-control m-1"
                 placeholder="Email"
-                {...register("name", { required: true })}
+                {...register("email", { required: true })}
               />
-              {errors.name && (
+              {errors.email && (
                 <span className="text-danger">This field is required</span>
               )}
             </div>
 
             <div className="form-group mb-3">
               <input
-                type="text"
+                type="password"
                 className="form-control m-1"
                 placeholder="Password"
-                {...register("phone", { required: true })}
+                {...register("password", { required: true })}
               />
-              {errors.phone && (
+              {errors.password && (
                 <span className="text-danger">This field is required</span>
               )}
             </div>

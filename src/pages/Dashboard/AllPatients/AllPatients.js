@@ -15,9 +15,7 @@ function AllPatients() {
   }, []);
   return (
     <div>
-      <Sidebar title="Patients">
         <PatientsDataTable patients={patients} />
-      </Sidebar>
     </div>
   );
 }

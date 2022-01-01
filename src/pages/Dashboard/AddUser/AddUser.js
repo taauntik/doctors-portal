@@ -80,7 +80,6 @@ function AddUser() {
 
   return (
     <div>
-      <Sidebar title="Add People">
         <ToastContainer
           id="animate.css"
           position="top-right"
@@ -168,7 +167,6 @@ function AddUser() {
             </form>
           </div>
         </div>
-      </Sidebar>
     </div>
   );
 }

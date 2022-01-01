@@ -1,113 +1,40 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
-import { AppContext } from "../../App";
-import DashbaordAppointmentTable from "../../components/Dashboard/DashboardAppointmentTable/DashbaordAppointmentTable";
+import React from "react";
+import { useLocation, Outlet } from "react-router-dom";
 
 // internal imports
 import Sidebar from "../../components/Dashboard/Sidebar/Sidebar";
-import StatisticsCard from "../../components/Dashboard/StatisticsCard/StatisticsCard";
+import AddUser from "./AddUser/AddUser";
+import AllPatients from "./AllPatients/AllPatients";
+import DashboardAppointment from "./DashboardAppointment/DashboardAppointment";
+import DashboardHome from "./DashboardHome/DashboardHome";
 
 function Dashboard() {
-  const ContextData = useContext(AppContext);
-  const [pendingAppointments, setPendingAppointments] = useState([]);
-  const [todaysAppointments, setTodaysAppointments] = useState([]);
-
-  useEffect(() => {
-    setPendingAppointments((prevState) =>
-      ContextData.appointments.length > 0
-        ? ContextData.appointments.filter(
-            (appointment) => appointment.status === "Pending"
-          )
-        : []
-    );
-    setTodaysAppointments((prevState) =>
-      ContextData.appointments.length > 0
-        ? ContextData.appointments.filter(
-            (appointment) =>
-              appointment.date ===
-              new Date(new Date().toLocaleDateString()).toISOString()
-          )
-        : []
-    );
-  }, [ContextData.appointments]);
-
-  const statisticsData = [
-    {
-      id: "klsjdfh2",
-      htmlData: `
-          <p class="counts">${
-            pendingAppointments.length >= 10
-              ? pendingAppointments.length
-              : `0${pendingAppointments.length}`
-          }</p>
-          <p class="title">Pending <br />Appointments</p>
-      `,
-      bgcolor: "#e65a6d",
-      color: "white",
-    },
-    {
-      id: "kir309wflks",
-      htmlData: `
-      <p class="counts">${
-        todaysAppointments.length >= 10
-          ? todaysAppointments.length
-          : `0${todaysAppointments.length}`
-      }</p>
-      <p class="title">Today's <br />Appointments</p>
-      `,
-      bgcolor: "#3da5f4",
-      color: "white",
-    },
-    {
-      id: "o9023kldsfjsi",
-      htmlData: `
-      <p class="counts">${
-        ContextData.appointments.length >= 10
-          ? ContextData.appointments.length
-          : `0${ContextData.appointments.length}`
-      }</p>
-      <p class="title">Total <br />Appointments</p>
-      `,
-      bgcolor: "#00c689 ",
-      color: "white",
-    },
-    {
-      id: "0923klsfoiwer",
-      htmlData: `
-      <p class="counts">${
-        ContextData.appointments.length >= 10
-          ? ContextData.appointments.length
-          : `0${ContextData.appointments.length}`
-      }</p>
-      <p class="title">Total <br />Patients</p>
-      `,
-      bgcolor: "#fda006",
-      color: "white",
-    },
-  ];
+  const location = useLocation();
+  const path = location.pathname;
+  const title =
+    path === ("/dashboard/appointment" || "/dashboard/appointment")
+      ? "Appointment"
+      : path === ("/dashboard" || path === "/dashboard/")
+      ? "Dashboard"
+      : path === ("/dashboard/allpatients" || "/dashboard/allpatients/")
+      ? "All Patients"
+      : path === ("/dashboard/adduser" || path === "/dashboard/adduser/")
+      ? "Add User"
+      : null;
 
   return (
-    <div>
-      <Sidebar title="Dashboard">
-        <div className="container">
-          <div className="d-flex flex-wrap">
-            {statisticsData.map(({ id, htmlData, bgcolor, color }) => (
-              <StatisticsCard
-                key={id}
-                bgcolor={bgcolor}
-                htmlData={htmlData}
-                color={color}
-              />
-            ))}
-          </div>
-          <div>
-            <DashbaordAppointmentTable
-              appointments={ContextData.appointments}
-            />
-          </div>
-        </div>
-      </Sidebar>
-    </div>
+    <Sidebar title={title}>
+      {path === "Appointment" ? (
+        <DashboardAppointment />
+      ) : path === "Dashboard" ? (
+        <DashboardHome />
+      ) : path === "All Patients" ? (
+        <AllPatients />
+      ) : path === "Add User" ? (
+        <AddUser />
+      ) : null}
+      <Outlet />
+    </Sidebar>
   );
 }
 
